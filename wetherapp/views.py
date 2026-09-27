@@ -1,8 +1,13 @@
+import os
+from dotenv import load_dotenv
 from django.shortcuts import render
 import requests
 
+# Load environment variables from .env file
+load_dotenv()
+
 # Replace with your actual API key
-API_KEY = "45915a3957fa7d93ff86a6be6f2d727b"
+API_KEY = os.getenv("OPENWEATHER_API_KEY")
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 
 def index(request):
